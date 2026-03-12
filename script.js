@@ -47,16 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
     }
 });
-async function loadComponent(id, file) {
-
-  const res = await fetch(file);
-  const html = await res.text();
-
-  document.getElementById(id).innerHTML = html;
-
-}
-
-loadComponent("header", "/components/header.html");
-loadComponent("footer", "/components/footer.html");
-loadComponent('banner', '/layouts/home/banner.html');
-loadComponent('featured', '/layouts/home/featured.html');
+function loadComponent(id, file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading component:', error));
+        }
+loadComponent('header-placeholder', 'header.html');
+loadComponent('banner-placeholder', 'banner.html');
