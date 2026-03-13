@@ -1,6 +1,11 @@
 
 
-
+.font-darker{
+    font-family: "Darker Grotesque", sans-serif;
+}
+.font-dm{
+    font-family: "DM Sans", sans-serif;
+}
 .animate-slide{
 animation: slide 16s infinite;
 }
@@ -26,5 +31,3 @@ animation: slide 16s infinite;
 100% { transform: translateY(0); }
 }
 }
-
- 
